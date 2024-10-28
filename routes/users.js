@@ -5,8 +5,9 @@ const db = require('../Models/mysqlProvider')
 // ------------------------------------------------------------------
 
 
-router.get('getUsers', async (req, res) => {
+router.get('/getUsers', async (req, res) => {
   try {
+    console.log('Buscando usuários...');
     const users = await db.getAllUsers();
     res.send(users);
   } catch (e) {
